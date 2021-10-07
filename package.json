@@ -1,7 +1,7 @@
 {
   "name": "ticktick_productivity_chart_chrome_extension",
   "version": "0.1.0",
-  "description": "",
+  "description": "TickTick productivity chart google chrome extension",
   "main": "index.js",
   "scripts": {
     "build": "webpack"
