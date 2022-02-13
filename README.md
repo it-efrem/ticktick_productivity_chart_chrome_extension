@@ -1,5 +1,5 @@
 # TickTick productivity chart
-> version 1.0.0
+> version 1.0.1
 > 
 > Published to Chrome Web Store - [Add to Chrome](https://chrome.google.com/webstore/search/TickTick%20?hl=en-US) 
 

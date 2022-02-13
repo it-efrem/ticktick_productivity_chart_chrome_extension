@@ -8,6 +8,7 @@ export const createCssClass = (className: string, css: object) => {
 
 export const useCssClass = (element: HTMLElement, className: string) => {
   const cn = `${appId}_${className}`;
+  element.classList.remove(cn);
   element.classList.add(cn);
 };
 
