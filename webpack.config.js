@@ -1,41 +1,39 @@
-const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/app/index",
+  entry: {
+    ticktick: "./src/ticktick/index.ts",
+    extension: "./src/extension/index.ts",
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: "index.js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].js",
+    clean: true,
+  },
+  resolve: {
+    extensions: [".ts"],
+    alias: {
+      src: path.resolve(__dirname, "./src"),
+    },
   },
   module: {
     rules: [
       {
-        test: /\.js?$/,
-        include: [
-          path.resolve(__dirname, "src")
+        test: /\.ts?$/,
+        use: [
+          {
+            loader: "ts-loader",
+          },
         ],
-        loader: "babel-loader",
-        options: {
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                "useBuiltIns": "entry"
-              }
-            ]
-          ]
-        },
-      }
-    ]
+        include: [path.resolve(__dirname, "src")],
+      },
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new CopyPlugin({
-      patterns: [
-        {from: "src/static", to: ''},
-      ],
+      patterns: [{ from: "src/static", to: "" }],
     }),
   ],
-}
+};

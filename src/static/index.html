@@ -1,8 +1,36 @@
 <html>
 <head>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body style="width: 400px">
-<div>TickTick productivity chart</div>
-<div>v 0.1.0</div>
+<body>
+<div class="block">
+  <h1>TickTick productivity chart</h1>
+</div>
+
+<div class="block">
+  <div class="settings_option">
+    <div class="plugin_status">
+      <div>Plugin</div>
+      <div id="plugin_status"></div>
+    </div>
+    <div>
+      <button type="button" id="plugin_button"/>
+    </div>
+  </div>
+</div>
+
+<div class="block">
+  <h2>Lists</h2>
+  <div class="list" id="list">
+
+  </div>
+</div>
+
+<div class="block footer">
+  <div>Creator - <a href="https://it-efrem.com/" target="_blank">it-efrem.com</a></div>
+  <div>v1.0.0</div>
+</div>
+
+<script src="extension.js"></script>
 </body>
 </html>
